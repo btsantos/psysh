@@ -35,9 +35,10 @@ if (!function_exists('Psy\bin')) {
             $input = new ArgvInput();
             try {
                 $input->bind(new InputDefinition(array(
-                    new InputOption('help',    'h', InputOption::VALUE_NONE),
-                    new InputOption('config',  'c', InputOption::VALUE_REQUIRED),
-                    new InputOption('version', 'v', InputOption::VALUE_NONE),
+                    new InputOption('help',    'h',  InputOption::VALUE_NONE),
+                    new InputOption('config',  'c',  InputOption::VALUE_REQUIRED),
+                    new InputOption('version', 'v',  InputOption::VALUE_NONE),
+                    new InputOption('cwd',     null, InputOption::VALUE_REQUIRED),
 
                     new InputArgument('include', InputArgument::IS_ARRAY),
                 )));
@@ -71,6 +72,7 @@ Usage:
 Options:
   --help     -h Display this help message.
   --config   -c Use an alternate PsySH config file location.
+  --cwd         Use an alternate working directory.
   --version  -v Display the PsySH version.
 
 EOL;
